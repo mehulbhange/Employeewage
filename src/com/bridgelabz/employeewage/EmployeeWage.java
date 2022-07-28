@@ -6,16 +6,20 @@ public class EmployeeWage {
     static int fullTimeHrs = 8;
     static int partTimeHrs = 4;
     static int totalWorkingDays = 20;
+    static int totalWorkingHrs = 100;
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation Program");
 
         /*
-         * UC5
-         * Calculate wages for month
+         * UC6
+         * Calculate Wages till a condition of total
+         * working hours or days is reached for a month
          * */
 
         int totalHrs = 0;
-        for(int i=0;i<totalWorkingDays;i++){
+        int days = 0;
+        while (totalHrs < totalWorkingHrs && days < totalWorkingDays){
+            days++;
             int isPresent = (int) Math.floor(Math.random()*10)%3;
             switch (isPresent){
                 case 1:
