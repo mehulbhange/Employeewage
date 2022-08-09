@@ -7,15 +7,8 @@ public class EmployeeWage {
     static int partTimeHrs = 4;
     static int totalWorkingDays = 20;
     static int totalWorkingHrs = 100;
-    public static void main(String[] args) {
-        System.out.println("Welcome to Employee Wage Computation Program");
 
-        /*
-         * UC6
-         * Calculate Wages till a condition of total
-         * working hours or days is reached for a month
-         * */
-
+    public static void computeEmployeeWage(){
         int totalHrs = 0;
         int days = 0;
         while (totalHrs < totalWorkingHrs && days < totalWorkingDays){
@@ -34,6 +27,11 @@ public class EmployeeWage {
             }
         }
         System.out.println("Monthly wage : "+ totalHrs*wagePerHr);
+    }
 
+    public static void main(String[] args) {
+        System.out.println("Welcome to Employee Wage Computation Program");
+
+        computeEmployeeWage();
     }
 }
