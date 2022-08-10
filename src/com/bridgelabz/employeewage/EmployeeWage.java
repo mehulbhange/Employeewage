@@ -13,6 +13,7 @@ public class EmployeeWage {
         int days = 0;
         while (totalHrs < totalWorkingHrs && days < totalWorkingDays){
             days++;
+
             int isPresent = (int) Math.floor(Math.random()*10)%3;
             switch (isPresent){
                 case 1:
