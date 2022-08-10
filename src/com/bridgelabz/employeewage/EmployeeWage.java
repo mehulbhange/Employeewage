@@ -8,7 +8,7 @@ public class EmployeeWage {
     static int totalWorkingDays = 20;
     static int totalWorkingHrs = 100;
 
-    public static void computeEmployeeWage(){
+    public void computeEmployeeWage(){
         int totalHrs = 0;
         int days = 0;
         while (totalHrs < totalWorkingHrs && days < totalWorkingDays){
@@ -32,6 +32,8 @@ public class EmployeeWage {
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation Program");
 
-        computeEmployeeWage();
+        EmployeeWage employeeWage = new EmployeeWage();
+        employeeWage.computeEmployeeWage();
+
     }
 }
