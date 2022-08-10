@@ -1,16 +1,15 @@
 package com.bridgelabz.employeewage;
 
+import java.util.Scanner;
+
 public class EmployeeWage {
 
-    static int wagePerHr = 20;
-    static int fullTimeHrs = 8;
-    static int partTimeHrs = 4;
-    static int totalWorkingDays = 20;
-    static int totalWorkingHrs = 100;
-
-    public void computeEmployeeWage(){
+        public void computeEmployeeWage(int wagePerHr, int totalWorkingDays, int totalWorkingHrs){
+        int fullTimeHrs = 8;
+        int partTimeHrs = 4;
         int totalHrs = 0;
         int days = 0;
+
         while (totalHrs < totalWorkingHrs && days < totalWorkingDays){
             days++;
             int isPresent = (int) Math.floor(Math.random()*10)%3;
@@ -32,8 +31,10 @@ public class EmployeeWage {
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation Program");
 
-        EmployeeWage employeeWage = new EmployeeWage();
-        employeeWage.computeEmployeeWage();
+        EmployeeWage c1 = new EmployeeWage();
+        c1.computeEmployeeWage(25, 20, 100);
+        EmployeeWage c2 = new EmployeeWage();
+        c2.computeEmployeeWage(20, 25, 100);
 
     }
 }
