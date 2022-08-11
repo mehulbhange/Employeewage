@@ -4,7 +4,19 @@ import java.util.Scanner;
 
 public class EmployeeWage {
 
-        public void computeEmployeeWage(int wagePerHr, int totalWorkingDays, int totalWorkingHrs){
+        private String companyName;
+        private int wagePerHr;
+        private int totalWorkingDays;
+        private int totalWorkingHrs;
+
+        public EmployeeWage(String companyName,int wagePerHr, int totalWorkingDays, int totalWorkingHrs){
+            this.companyName = companyName;
+            this.wagePerHr = wagePerHr;
+            this.totalWorkingDays = totalWorkingDays;
+            this.totalWorkingHrs = totalWorkingHrs;
+        }
+
+        public int computeEmployeeWage(){
         int fullTimeHrs = 8;
         int partTimeHrs = 4;
         int totalHrs = 0;
@@ -26,16 +38,16 @@ public class EmployeeWage {
 
             }
         }
-        System.out.println("Monthly wage : "+ totalHrs*wagePerHr);
+        return totalHrs*wagePerHr;
     }
 
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation Program");
 
-        EmployeeWage c1 = new EmployeeWage();
-        c1.computeEmployeeWage(25, 20, 100);
-        EmployeeWage c2 = new EmployeeWage();
-        c2.computeEmployeeWage(20, 25, 100);
+        EmployeeWage c1 = new EmployeeWage("TCS",25, 20, 100);
+        System.out.println(c1.companyName+" : "+c1.computeEmployeeWage());
+        EmployeeWage c2 = new EmployeeWage("Infosys",20, 25, 100);
+        System.out.println(c2.companyName+" : "+c2.computeEmployeeWage());
 
     }
 }
