@@ -2,7 +2,7 @@ package com.bridgelabz.employeewage;
 
 import java.util.Scanner;
 
-public class EmployeeWage {
+public class EmployeeWage implements IEmployeeWage {
 
     // Declaring a constant
     public static final int IS_FULLTIME = 1;
