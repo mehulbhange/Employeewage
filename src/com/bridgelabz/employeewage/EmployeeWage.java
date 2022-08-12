@@ -1,6 +1,7 @@
 package com.bridgelabz.employeewage;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class EmployeeWage implements IEmployeeWage {
@@ -11,12 +12,13 @@ public class EmployeeWage implements IEmployeeWage {
 
     private ArrayList<CompanyEmpWage> companyEmpWageList;
 
+    private CompanyEmpWage companyEmpWage;
     public EmployeeWage(){
         companyEmpWageList = new ArrayList<>();
     }
 
     public void addCompany(String companyName, int wagePerHr, int totalWorkingDays, int totalWorkingHrs){
-        CompanyEmpWage companyEmpWage = new CompanyEmpWage(companyName,wagePerHr,totalWorkingDays,totalWorkingHrs);
+        companyEmpWage = new CompanyEmpWage(companyName,wagePerHr,totalWorkingDays,totalWorkingHrs);
         companyEmpWage.setTotalEmpWage(computeEmployeeWage(wagePerHr,totalWorkingDays,totalWorkingHrs));
         companyEmpWageList.add(companyEmpWage);
 
@@ -34,13 +36,16 @@ public class EmployeeWage implements IEmployeeWage {
                 switch (isPresent){
                     case IS_FULLTIME:
                         totalHrs += fullTimeHrs;
+                        companyEmpWage.getDailyWages().add(fullTimeHrs);
                         break;
                     case IS_PARTTIME:
                         totalHrs += partTimeHrs;
+                        companyEmpWage.getDailyWages().add(partTimeHrs);
                         break;
                     default:
-                        totalHrs += 0;
+                        companyEmpWage.getDailyWages().add(0);
                 }
+
             }
         return totalHrs*wagePerHr;
     }
@@ -56,7 +61,10 @@ public class EmployeeWage implements IEmployeeWage {
 
         for (CompanyEmpWage cmp : employeeWage.companyEmpWageList){
             System.out.println(cmp.getCompanyName() +" : "+cmp.getTotalEmpWage());
+            System.out.print(cmp.getDailyWages());
+            System.out.println();
         }
+
 
 
     }
