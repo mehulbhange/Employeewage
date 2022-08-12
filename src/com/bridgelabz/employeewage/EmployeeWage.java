@@ -61,22 +61,6 @@ public class EmployeeWage implements IEmployeeWage {
 
             }
 
-        while (totalHrs < totalWorkingHrs && days < totalWorkingDays){
-            days++;
-
-            int isPresent = (int) Math.floor(Math.random()*10)%3;
-            switch (isPresent){
-                case 1:
-                    totalHrs += fullTimeHrs;
-                    break;
-                case 2:
-                    totalHrs += partTimeHrs;
-                    break;
-                default:
-                    totalHrs += 0;
-
-            }
-        }
         return totalHrs*wagePerHr;
     }
 
